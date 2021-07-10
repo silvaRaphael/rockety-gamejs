@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Comfortaa', cursive;
+}
+
+.screen {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #000C73;
+    /*background: url("image/background.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;*/
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.ship {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: url(image/ships/sBl1-stop.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 75px;
+    height: 150px;
+    z-index: 2;
+}
+
+.control-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    z-index: 2;
+}
+
+#control {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%;
+    height: 70px;
+    background: #fff;
+    border-radius: 12px;
+    opacity: 0.5;
+    outline: none;
+}
+
+#control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    width: 50px;
+    background: url(image/ship-control.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.obstaculo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 64px;
+    background: url(image/meteor-move.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: none;
+}
+
+@keyframes time1 {
+    0% {
+        top: -90px;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.gameOver {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #304F69BA;
+    z-index: 10000;
+}
+
+#videoAd {
+	display: none;
+}
+
+#videoAd p {
+	font: normal 12px;
+	text-align: center;
+}
+
+.retry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px #000000BA;
+    width: 70%;
+    background: #085FA6;
+    z-index: 11000;
+}
+
+.btn {
+    padding: 15px 30px;
+    background: #085FA6;
+    border: solid 3px #DCDCDC;
+    border-radius: 15px;
+    margin: 40px 0;
+}
+
+.retry h2 {
+    font: bold 80px arial;
+    text-align: center;
+}
+
+.retry .p {
+    font: bold 30px;
+}
+
+.menuStart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background: #085FA6;
+    color: #fff;
+}
+
+.title h1 {
+    font: bold 70px arial;
+    margin: 0 0 40px;
+}
+
+.info p {
+    font: bold 50px 'Comfortaa', cursive;
+}
+
+.recorde p {
+    font: bold 50px 'Comfortaa', cursive;
+}
+
+.start p {
+    font: bold 50px 'Comfortaa', cursive;
+}
+
+.config {
+    margin: 40px 0 0;
+    padding: 15px 15px 10px;
+}
+
+#config {
+    width: 40px;
+}
+
+#voltar {
+    display: none;
+    position: absolute;
+    top: 4%;
+    right: 20px;
+}
+
+.configScreen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    background: #085fa6;
+    color: #fff;
+    text-align: center;
+    font: bold 25px 'Comfortaa', cursive;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.velo {
+    font-size: 40px;
+}
+
+.ships {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 135px;
+    width: 80%;
+    border-radius: 15px;
+    background: #085FA6;
+    border: solid 3px #DCDCDC;
+}
+
+.ships img {
+    height: 150px;
+    width: 75px;
+    margin: 5px 20px;
+}
+
+.pauseIcon {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    opacity: 0.5;
+    border-radius: 50%;
+    color: #000C73;
+    box-shadow: 0 0 20px 5px #000;
+    font: bold 55px/55px arial;
+    transform: rotateZ(90deg);
+    z-index: 1000;
+}
+
+#size {
+    display: block;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    background: red;
+    color: #FFFFFF;
+    z-index: 10000;
+}
+
+.pauseScreen {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #304f69a6;
+    z-index: 10000;
+}
+
+.pause {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 30px 15px;
+    border-radius: 25px;
+    width: 70%;
+    height: 350px;
+    background: #085fa6;
+    z-index: 11000;
+}
+
+.btn {
+    padding: 15px 30px;
+    background: #085fa6;
+    border: solid 3px #DCDCDC;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.menu-btn {
+    padding: 15px 30px;
+    border: solid 3px #DCDCDC;
+    background: #085fa6;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.pause h2 {
+    font: bold 50px arial;
+    text-align: center;
+    margin: 15px 0 0;
+}
+
+.pause .p {
+    font: bold 30px 'Comfortaa', cursive;
+}
+
+.sair-btn {
+    font: normal 16px 'Comfortaa', cursive;
+    color: #C7C7C7;
+    margin: 20px 0 0;
+}
+
+.prepare {
+    display: none;
+    flex-direction: column;
+    padding: 0 0 200px;
+    opacity: .6;
+    text-align: center;
+    z-index: 10000;
+}
+
+.prepare p {
+    font: bold 200px arial;
+    color: #ffffff;
+}
+
+.livePoints {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    opacity: 0.5;
+    z-index: 1000;
+}
+
+.livePoints p {
+    font: bold 50px arial;
+    color: #FFFFFF;
+}

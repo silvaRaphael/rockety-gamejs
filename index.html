@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ROCKETY</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="menuStart">
+
+        <div class="title">
+            <h1>ROCKETY</h1>
+        </div>
+
+        <div class="info btn">
+            <p id="recordeNum">0</p>
+        </div>
+        <div class="btn start" id='start' onclick="start()">
+            <p>START</p>
+        </div>
+        <div class="config" id="configBtn" onclick="config()">
+            <img id='config' src="image/config.svg">
+        </div>
+    </div>
+
+    <div class="configScreen">
+        <div class="configSetting" onclick="config()">
+            <img id='config' src="image/config.svg">
+        </div>
+        <div class="velo">
+            <!-- <div class="menu-btn" id='carreiraBtn'>Carreira</div> -->
+            <div class="menu-btn" id='facilBtn'>Facil</div>
+            <div class="menu-btn" id="normalBtn">Normal</div>
+            <div class="menu-btn" id="dificilBtn">Dificil</div>
+        </div>
+        <p class='velo'>Foguetes</p>
+        <div class="ships">
+            <img src="image/ships/sBl1-stop.png" onclick='sBlue1()'>
+            <img src="image/ships/sGr1-stop.png" onclick='sGreen1()'>
+            <img src="image/ships/sGr2-stop.png" onclick='sGreen2()'>
+            <img src="image/ships/sGr3-stop.png" onclick='sGreen3()'>
+            <img src="image/ships/sOr1-stop.png" onclick='sOrange1()'>
+            <img src="image/ships/sOr2-stop.png" onclick='sOrange2()'>
+            <img src="image/ships/sYe1-stop.png" onclick='sYellow1()'>
+            <img src="image/ships/sYe2-stop.png" onclick='sYellow2()'>
+        </div>
+        <p id="voltar" onclick="voltar()">Voltar</p>
+    </div>
+
+    <div class="screen" id="screen">
+
+        <div class="prepare">
+            <p id="contagem"></p>
+        </div>
+
+        <div class="pauseIcon" id="pause">
+            <p>=</p>
+        </div>
+
+        <div class="livePoints">
+            <p id="livePoints"></p>
+        </div>
+
+        <div class="obstaculo" id="ob1"></div>
+        <div class="obstaculo" id="ob2"></div>
+        <div class="obstaculo" id="ob3"></div>
+
+        <div class="ship" id="ship"></div>
+
+        <div class="control-container">
+            <input type="range" class="control" min="0" max="100" name="control" id="control" value="50" />
+
+            <div id="size"></div>
+        </div>
+
+        <div class="gameOver">
+            <div class="retry">
+                <h2>GAME<br>OVER</h2>
+                <div class="btn">
+                    <p class="p" id="points">0</p>
+                </div>
+                <!-- <div class="btn" id="videoAd">
+                    <p>ASSISTA PARA<br>CONTINUAR</p>
+                </div> -->
+                <div>
+                    <p class="sair-btn" id="sair-btn1">SAIR</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pauseScreen">
+            <div class="pause">
+                <h2>PAUSADO</h2>
+                <div class="btn">
+                    <p class="p" id="pointsPause">0 </p>
+                </div>
+                <div class="btn" id="voltar-btn">
+                    <p class="p">VOLTAR</p>
+                </div>
+                <div>
+                    <p class="sair-btn" id="sair-btn2">SAIR</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script src="shipFunctions.js"></script>
+</body>
+
+</html>
